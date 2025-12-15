@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>À propos de moi - Portfolio Bakary Dramé</title>
+  <!-- Ajout de la police Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body { 
+      /* Police mise à jour */
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      background: linear-gradient(to bottom, #0a0e27, #1a1f3a);
+      color: #e5e7eb;
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Effet étoiles */
+    .stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .stars::before {
+      content: '';
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      box-shadow: 
+        100px 200px white, 300px 100px white, 500px 300px white,
+        700px 150px white, 900px 250px white, 1100px 180px white,
+        200px 400px white, 400px 350px white, 600px 450px white,
+        800px 380px white, 1000px 420px white, 1200px 390px white,
+        150px 600px white, 350px 550px white, 550px 650px white,
+        750px 580px white, 950px 620px white, 1150px 590px white;
+      animation: twinkle 3s infinite;
+    }
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
+    }
+
+    /* Header */
+    header { 
+      background-color: rgba(17, 24, 39, 0.8);
+      backdrop-filter: blur(10px);
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+    }
+    .nav-container { 
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo { 
+      font-weight: bold;
+      font-size: 22px;
+      color: #60a5fa;
+    }
+    nav a { 
+      color: #e5e7eb;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 15px;
+      transition: color 0.3s;
+    }
+    nav a:hover { 
+      color: #60a5fa;
+    }
+
+    main { 
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 30px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn-retour {
+      display: inline-block;
+      margin-bottom: 30px;
+      padding: 12px 24px;
+      background: rgba(59, 130, 246, 0.2);
+      border: 2px solid #60a5fa;
+      color: #60a5fa;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: all 0.3s;
+    }
+    .btn-retour:hover {
+      background: rgba(59, 130, 246, 0.4);
+      transform: translateX(-5px);
+    }
+
+    /* Section intro */
+    .intro-section {
+      margin-bottom: 50px;
+      text-align: center;
+    }
+    .intro-section h1 {
+      font-size: 42px;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+    .intro-section h1 .highlight {
+      color: #60a5fa;
+    }
+    .intro-content {
+      background: rgba(31, 41, 55, 0.6);
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(59, 130, 246, 0.3);
+      padding: 40px;
+      border-radius: 12px;
+      text-align: left;
+    }
+    .intro-content p {
+      margin-bottom: 20px;
+      font-size: 16px;
+      line-height: 1.8;
+      color: #d1d5db;
+    }
+    .intro-content ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .intro-content ul li {
+      margin-bottom: 12px;
+      padding-left: 30px;
+      position: relative;
+      color: #d1d5db;
+    }
+    .intro-content ul li:before {
+      content: "▶";
+      position: absolute;
+      left: 0;
+      color: #60a5fa;
+    }
+    .citation {
+      margin-top: 30px;
+      padding: 20px;
+      background: rgba(59, 130, 246, 0.1);
+      border-left: 4px solid #60a5fa;
+      font-style: italic;
+      text-align: center;
+      color: #9ca3af;
+    }
+
+    section {
+      margin-bottom: 40px;
+      padding: 30px;
+      background: rgba(31, 41, 55, 0.6);
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(59, 130, 246, 0.3);
+      border-radius: 12px;
+    }
+    section h2 {
+      margin-top: 0;
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #60a5fa;
+      border-bottom: 2px solid rgba(59, 130, 246, 0.3);
+      padding-bottom: 10px;
+    }
+    section ul {
+      padding-left: 25px;
+      color: #d1d5db;
+    }
+    section ul li {
+      margin-bottom: 10px;
+    }
+    section p {
+      color: #d1d5db;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+
+    .btn-telecharger {
+      display: block;
+      margin: 40px auto 0 auto;
+      padding: 15px 30px;
+      background: linear-gradient(135deg, #60a5fa, #3b82f6);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      text-align: center;
+      max-width: 350px;
+      transition: all 0.3s;
+      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+    }
+    .btn-telecharger:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(59, 130, 246, 0.5);
+    }
+  </style>
+</head>
+<body>
+  <div class="stars"></div>
+
+  <header>
+    <div class="nav-container">
+      <div class="logo">Bakary Dramé</div>
+      <nav>
+        <a href="index.html">🏠 Accueil</a>
+        <a href="a-propos.html">👤 À propos</a>
+        <a href="projets.html">💼 Projets</a>
+        <a href="veille.html">📡 Veille</a>
+        <a href="competences.html">⚡ Compétences</a>
+        <a href="contact.html">📧 Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <a href="index.html" class="btn-retour">← Retour à l'accueil</a>
+    
+    <div class="intro-section">
+      <h1>Savoir qui  <span class="highlight">JE SUIS</span></h1>
+      <div class="intro-content">
+        <p>Bonjour ! Je m'appelle <strong>Bakary Dramé</strong>, étudiant en deuxième année de BTS Services Informatiques aux Organisations (SIO), option SLAM au Lycée Charles de Foucauld à Paris.</p>
+        
+        <p>J'aime le <strong>web design</strong> mais ce que je préfère faire est de transformer mes idées en tests et expériences pour voir leurs résultats.</p>
+        
+        <!-- Correction : Espace ajouté avant PHP -->
+        <p>Nous avons appris à utiliser : <strong>PHP, Java, JavaScript, HTML/CSS, SQL</strong> et nous travaillons actuellement avec <strong>Laravel</strong>.</p>
+        
+        <p>En dehors du code, j'aime :</p>
+        <ul>
+          <li>Jouer aux jeux vidéo 🎮</li>
+          <li>Prendre des photos d'animaux ou de paysages 📸</li>
+          <li>Cuisiner des plats et des desserts à partager 👨🏾‍🍳</li>
+        </ul>
+      </div>
+    </div>
+
+    <section>
+      <h2>Mes objectifs professionnels</h2>
+      <p><strong>À court terme :</strong> Valider mon BTS SIO SLAM et poursuivre vers une licence pro applications web ou une licence pro conception, développement et test de logiciels.</p>
+      <p><strong>À moyen terme :</strong> Intégrer une entreprise innovante en tant que développeur web front-stack ou full-stack, et continuer à me former sur les technologies émergentes.</p>
+      <!-- Correction : Majuscules pour le Master -->
+      <p><strong>À long terme :</strong> Viser un Master en Webdesign ou un Master Conception Web et Développement, pour évoluer vers des postes à responsabilités.</p>
+    </section>
+
+    <div style="text-align: center; margin-top: 40px;">
+      <a href="pdf/CV.BD.pdf" target="_blank" style="
+        display: inline-block;
+        background-color: #3b82f6;
+        color: white;
+        padding: 15px 30px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 16px;
+        box-shadow: 0 4px 6px rgba(59, 130, 246, 0.3);
+        transition: background-color 0.3s ease;
+      ">
+        📄 Télécharger mon CV complet (PDF)
+      </a>
+    </div>
+
+  </main>
+</body>
+</html>

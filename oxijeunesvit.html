@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projet Oxyjeunes Vitrine - Portfolio Bakary Dramé</title>
+  <!-- Ajout de la police Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body { 
+      /* Police mise à jour */
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      background: linear-gradient(to bottom, #0a0e27, #1a1f3a);
+      color: #e5e7eb;
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Effet étoiles */
+    .stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .stars::before {
+      content: '';
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      box-shadow: 
+        100px 200px white, 300px 100px white, 500px 300px white,
+        700px 150px white, 900px 250px white, 1100px 180px white,
+        200px 400px white, 400px 350px white, 600px 450px white,
+        800px 380px white, 1000px 420px white, 1200px 390px white,
+        150px 600px white, 350px 550px white, 550px 650px white,
+        750px 580px white, 950px 620px white, 1150px 590px white;
+      animation: twinkle 3s infinite;
+    }
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
+    }
+
+    /* Header */
+    header { 
+      background-color: rgba(17, 24, 39, 0.8);
+      backdrop-filter: blur(10px);
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+    }
+    .nav-container { 
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo { 
+      font-weight: bold;
+      font-size: 22px;
+      color: #60a5fa;
+    }
+    nav a { 
+      color: #e5e7eb;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 15px;
+      transition: color 0.3s;
+    }
+    nav a:hover { 
+      color: #60a5fa;
+    }
+
+    main { 
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 30px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    h1 {
+      font-size: 42px;
+      text-align: center;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+    h1 .highlight {
+      color: #60a5fa;
+    }
+    
+    .intro {
+      text-align: center;
+      color: #9ca3af;
+      margin-bottom: 50px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .btn-retour {
+      display: inline-block;
+      margin-bottom: 30px;
+      padding: 12px 24px;
+      background: rgba(59, 130, 246, 0.2);
+      border: 2px solid #60a5fa;
+      color: #60a5fa;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: all 0.3s;
+    }
+    .btn-retour:hover {
+      background: rgba(59, 130, 246, 0.4);
+      transform: translateX(-5px);
+    }
+
+    section {
+      margin-bottom: 40px;
+      padding: 30px;
+      background: rgba(31, 41, 55, 0.6);
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(59, 130, 246, 0.3);
+      border-radius: 12px;
+    }
+    section h2 {
+      margin-top: 0;
+      font-size: 28px;
+      margin-bottom: 20px;
+      color: #60a5fa;
+      border-bottom: 2px solid rgba(59, 130, 246, 0.3);
+      padding-bottom: 10px;
+    }
+    section p {
+      color: #d1d5db;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+    section ul {
+      padding-left: 25px;
+      color: #d1d5db;
+    }
+    section ul li {
+      margin-bottom: 10px;
+    }
+
+    /* Styles spécifiques */
+    .tech-badges {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+    .badge-tech {
+      background: rgba(59, 130, 246, 0.2);
+      border: 1px solid #60a5fa;
+      color: #60a5fa;
+      padding: 5px 12px;
+      border-radius: 15px;
+      font-size: 0.9em;
+    }
+    
+    /* Conteneur vidéo responsive */
+    .video-container {
+      margin-top: 20px;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 2px solid rgba(59, 130, 246, 0.3);
+      position: relative;
+      padding-bottom: 56.25%; /* Ratio 16:9 */
+      height: 0;
+      background: #000;
+    }
+    .video-container video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    /* Styles pour la Timeline */
+    .timeline {
+      border-left: 3px solid #60a5fa;
+      margin-left: 20px;
+      padding-left: 20px;
+      margin-top: 20px;
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 30px;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -29px; 
+      top: 5px;
+      width: 15px;
+      height: 15px;
+      background: #60a5fa;
+      border-radius: 50%;
+      border: 3px solid #1a1f3a;
+    }
+    .timeline-date {
+      font-weight: bold;
+      color: #60a5fa;
+      margin-bottom: 5px;
+      font-size: 0.9em;
+      text-transform: uppercase;
+    }
+    .timeline-content h3 {
+      margin: 0 0 10px 0;
+      font-size: 1.1em;
+      color: #e5e7eb;
+    }
+    .timeline-content ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    /* Styles pour la Galerie WhatsApp */
+    .whatsapp-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .whatsapp-screen {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 10px;
+      border-radius: 8px;
+      text-align: center;
+      margin: 0;
+    }
+    .whatsapp-screen img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    }
+    .whatsapp-screen figcaption {
+      margin-top: 10px;
+      font-size: 0.9em;
+      color: #9ca3af;
+      font-style: italic;
+    }
+
+    /* Grille des pôles */
+    .poles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 25px;
+    }
+
+    .pole-card {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(96, 165, 250, 0.05));
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      border-radius: 12px;
+      padding: 25px;
+      text-align: center;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pole-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .pole-card:hover {
+      border-color: #60a5fa;
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.2), rgba(96, 165, 250, 0.1));
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(59, 130, 246, 0.2);
+    }
+
+    .pole-card:hover::before {
+      left: 100%;
+    }
+
+    .pole-emoji {
+      font-size: 3em;
+      margin-bottom: 12px;
+    }
+
+    .pole-card h3 {
+      font-size: 1.2em;
+      color: #60a5fa;
+      margin: 12px 0;
+      border-bottom: 2px solid rgba(59, 130, 246, 0.3);
+      padding-bottom: 10px;
+    }
+
+    .pole-card p {
+      color: #cbd5e1;
+      font-size: 0.95em;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* -------------------------------------- */
+    /* CSS POUR LE DRAG-TO-SCROLL (SOURIS)    */
+    /* -------------------------------------- */
+    
+    .architecture-section {
+      overflow: hidden; 
+    }
+
+    /* Conteneur de scroll horizontal */
+    .scroll-container {
+      display: flex;
+      overflow-x: auto;
+      gap: 15px;
+      padding: 20px 5px;
+      width: 100%;
+      
+      /* Cacher la scrollbar */
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none;  /* IE and Edge */
+      
+      /* Interaction souris */
+      cursor: grab; /* Main ouverte */
+      user-select: none; /* Empêche de sélectionner le texte en glissant */
+    }
+    
+    /* Cacher la scrollbar Chrome/Safari/Opera */
+    .scroll-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Quand on clique pour attraper */
+    .scroll-container.active {
+      cursor: grabbing; /* Main fermée */
+      cursor: -webkit-grabbing;
+    }
+
+    /* Style des cartes pour le scroll */
+    .page-card {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(31, 41, 55, 0.4));
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      padding: 20px 30px;
+      border-radius: 12px;
+      color: #e5e7eb;
+      font-weight: 600;
+      white-space: nowrap; /* Empêche le retour à la ligne */
+      flex-shrink: 0; /* Empêche les cartes de rétrécir */
+      transition: transform 0.3s ease, background 0.3s ease;
+      font-size: 1.1em;
+      min-width: 160px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* Empêche les événements de clic/sélection sur les cartes pendant le drag */
+      pointer-events: none; 
+    }
+
+    .scroll-container:hover .page-card:hover {
+      background: rgba(59, 130, 246, 0.2);
+      border-color: #60a5fa;
+      color: #ffffff;
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+    }
+
+    /* Indicateur de scroll */
+    .scroll-hint {
+      text-align: center;
+      font-size: 0.8em;
+      color: #60a5fa;
+      opacity: 0.7;
+      margin-top: 5px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="stars"></div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="nav-container">
+      <div class="logo">Bakary Dramé</div>
+      <nav>
+        <a href="index.html">🏠 Accueil</a>
+        <a href="a-propos.html">👤 À propos</a>
+        <a href="projets.html">💼 Projets</a>
+        <a href="veille.html">📡 Veille</a>
+        <a href="competences.html">⚡ Compétences</a>
+        <a href="contact.html">📧 Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <a href="projets.html" class="btn-retour">← Retour aux projets</a>
+    
+    <h1>Projet <span class="highlight">Site Oxyjeunes</span></h1>
+    <p class="intro">Site vitrine réalisé lors de mon stage de 1ère année de BTS SIO.</p>
+    
+    <!-- SECTION CONTEXTE -->
+    <section>
+      <h2>Contexte du projet</h2>
+      <p>
+        Ce projet a été réalisé durant mon stage de première année chez l'association <strong>Oxyjeunes</strong>. 
+        L'association avait besoin d'un site vitrine pour présenter ses activités et ses événements, permettre de s'inscrire en tant que bénévole et enfin faire des dons.
+      </p>
+      <p><strong>Durée :</strong> 4 semaines (Juin - Juillet 2025)</p>
+    </section>
+
+    <!-- SECTION : À PROPOS D'OXYJEUNES -->
+    <section>
+      <h2>À propos d'Oxyjeunes</h2>
+      <p>
+        Oxyjeunes est une association fondée en 2020 par et pour les jeunes du quartier de l'Amiral Roussin à Paris. 
+        Sa mission est d'accompagner la jeunesse dans son développement personnel et collectif à travers des actions citoyennes, 
+        tout en renforçant le lien social et l'entraide au sein de la communauté.
+      </p>
+      <p style="margin-top: 20px;">
+        L'organisation structure ses activités autour de <strong>trois pôles principaux</strong> :
+      </p>
+
+      <div class="poles-grid">
+        <div class="pole-card">
+          <div class="pole-emoji">🤝</div>
+          <h3>Pôle Solidaire</h3>
+          <p>
+            Mène des actions d'entraide comme des maraudes pour les sans-abris, 
+            des collectes de dons et des projets humanitaires à l'international 
+            (Mali, Sénégal, Mauritanie).
+          </p>
+        </div>
+
+        <div class="pole-card">
+          <div class="pole-emoji">🌱</div>
+          <h3>Pôle Jeunesse</h3>
+          <p>
+            Propose des activités variées pour les jeunes, incluant des sorties culturelles 
+            et sportives, des rencontres avec des professionnels pour l'orientation et un 
+            accompagnement à la scolarité.
+          </p>
+        </div>
+
+        <div class="pole-card">
+          <div class="pole-emoji">🏢</div>
+          <h3>Pôle Quartier</h3>
+          <p>
+            Anime la vie locale en organisant des événements conviviaux (fêtes de rue, barbecues) 
+            pour renforcer les liens entre les habitants et les générations.
+          </p>
+        </div>
+      </div>
+
+      <p style="margin-top: 30px; font-style: italic; text-align: center; color: #a0aec0;">
+        Portée par des valeurs de <strong>bienveillance, de respect et d'esprit de famille</strong>, 
+        Oxyjeunes est une initiative locale qui valorise l'engagement des jeunes et des habitants 
+        pour créer un environnement positif et solidaire.
+      </p>
+    </section>
+
+    <!-- SECTION DÉMO VIDÉO -->
+    <section>
+      <h2>Démonstration du site</h2>
+      <p>Voici une présentation vidéo du site complet et de ses fonctionnalités :</p>
+      
+      <div class="video-container">
+        <video controls>
+          <source src="Vidéos/OxyjeunesVit.mp4" type="video/mp4">
+          Votre navigateur ne supporte pas la lecture de vidéos.
+        </video>
+      </div>
+    </section>
+
+    <!-- SECTION TECHNOLOGIES -->
+    <section>
+      <h2>Technologies utilisées</h2>
+      <div class="tech-badges">
+        <span class="badge-tech">HTML5</span>
+        <span class="badge-tech">CSS3 (Variables, Flexbox, Grid)</span>
+        <span class="badge-tech">JavaScript (Vanilla)</span>
+        <span class="badge-tech">VS Code</span>
+      </div>
+      <p style="margin-top: 15px;">
+        J'ai développé ce site "from scratch" sans framework lourd.
+      </p>
+      <ul>
+        <li><strong>CSS :</strong> Utilisation de variables CSS pour une charte graphique cohérente et facile à modifier.</li>
+        <!-- Correction : Espace après les deux-points -->
+        <li><strong>JavaScript :</strong> Script personnalisé pour gérer le menu burger mobile et les animations d'apparition au scroll.</li>
+      </ul>
+    </section>
+
+    <!-- SECTION ORGANISATION -->
+    <section>
+      <h2>🗓️ Organisation & Journal de bord</h2>
+      <p>
+        Pour mener à bien ce projet en 4 semaines, j'ai adopté une méthodologie agile simplifiée, avec des points réguliers sur WhatsApp pour valider chaque étape.
+      </p>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-date">Semaine 1</div>
+          <div class="timeline-content">
+            <h3>Analyse & Maquettage</h3>
+            <ul>
+              <li>Réunion de lancement : définition des besoins et de l'arborescence.</li>
+              <li>Récupération des ressources (logo, photos, textes).</li>
+              <li>Création des premières maquettes et choix de la charte graphique (couleurs, polices).</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">Semaine 2</div>
+          <div class="timeline-content">
+            <h3>Développement Structurel</h3>
+            <ul>
+              <li>Mise en place de la structure HTML de toutes les pages.</li>
+              <li>Création du fichier CSS global (variables, header, footer).</li>
+              <li>Intégration de la page d'accueil et du menu responsive.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">Semaine 3</div>
+          <div class="timeline-content">
+            <h3>Intégration & Contenu</h3>
+            <ul>
+              <li>Développement des pages spécifiques (Pôles, Équipe).</li>
+              <li>Intégration des galeries photos et des textes fournis.</li>
+              <li>Mise en place des animations d'apparition (Reveal).</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-date">Semaine 4</div>
+          <div class="timeline-content">
+            <h3>Finitions & Recette</h3>
+            <ul>
+              <li>Tests responsives sur différents mobiles.</li>
+              <li>Corrections suite aux retours WhatsApp (ajustement couleurs, textes).</li>
+              <li>Mise en ligne et livraison finale.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION ARCHITECTURE DU SITE (DRAG TO SCROLL) -->
+    <section class="architecture-section">
+      <h2>Architecture du site</h2>
+      <p>Le site est structuré en plusieurs pages thématiques.</p>
+      
+      <div class="scroll-container">
+        <div class="page-card">🏠 Accueil</div>
+        <div class="page-card">💡 Oxyjeunes</div>
+        <div class="page-card">👥 L'Équipe</div>
+        <div class="page-card">🤝 Pôle Solidaire</div>
+        <div class="page-card">🌱 Pôle Jeunesse</div>
+        <div class="page-card">🏢 Pôle Quartier</div>
+        <div class="page-card">📸 Instagram</div>
+        <div class="page-card">❤️ Dons</div>
+        <div class="page-card">📝 Mentions Légales</div>
+        <div class="page-card">📧 Contact</div>
+      </div>
+    </section>
+
+    <!-- SECTION APPORTS -->
+    <section>
+      <h2>Ce que j'ai appris</h2>
+      <ul>
+        <li>Comprendre et répondre aux besoins d'un projet réel.</li>
+        <li>Améliorer mes compétences en intégration CSS et Responsive Design.</li>
+        <li>Travailler en autonomie et gérer mon temps efficacement.</li>
+        <li>Communiquer avec un client pour définir et ajuster les besoins.</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- SCRIPT POUR LE DRAG-TO-SCROLL -->
+  <script>
+    const slider = document.querySelector('.scroll-container');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    slider.addEventListener('mousedown', (e) => {
+      isDown = true;
+      slider.classList.add('active');
+      startX = e.pageX - slider.offsetLeft;
+      scrollLeft = slider.scrollLeft;
+    });
+
+    slider.addEventListener('mouseleave', () => {
+      isDown = false;
+      slider.classList.remove('active');
+    });
+
+    slider.addEventListener('mouseup', () => {
+      isDown = false;
+      slider.classList.remove('active');
+    });
+
+    slider.addEventListener('mousemove', (e) => {
+      if(!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - slider.offsetLeft;
+      const walk = (x - startX) * 1.5; 
+      slider.scrollLeft = scrollLeft - walk;
+    });
+  </script>
+
+</body>
+</html>

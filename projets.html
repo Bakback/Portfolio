@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mes projets - Portfolio Bakary Dramé</title>
+  <!-- Ajout de la police Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body { 
+      /* Police mise à jour */
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      background: linear-gradient(to bottom, #0a0e27, #1a1f3a);
+      color: #e5e7eb;
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Effet étoiles */
+    .stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .stars::before {
+      content: '';
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      box-shadow: 
+        100px 200px white, 300px 100px white, 500px 300px white,
+        700px 150px white, 900px 250px white, 1100px 180px white,
+        200px 400px white, 400px 350px white, 600px 450px white,
+        800px 380px white, 1000px 420px white, 1200px 390px white,
+        150px 600px white, 350px 550px white, 550px 650px white,
+        750px 580px white, 950px 620px white, 1150px 590px white;
+      animation: twinkle 3s infinite;
+    }
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
+    }
+
+    /* Header */
+    header { 
+      background-color: rgba(17, 24, 39, 0.8);
+      backdrop-filter: blur(10px);
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+    }
+    .nav-container { 
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo { 
+      font-weight: bold;
+      font-size: 22px;
+      color: #60a5fa;
+    }
+    nav a { 
+      color: #e5e7eb;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 15px;
+      transition: color 0.3s;
+    }
+    nav a:hover { 
+      color: #60a5fa;
+    }
+
+    main { 
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 30px;
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      font-size: 42px;
+      text-align: center;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+    h1 .highlight {
+      color: #60a5fa;
+    }
+    .subtitle {
+      text-align: center;
+      color: #9ca3af;
+      margin-bottom: 50px;
+      font-size: 16px;
+    }
+
+    .btn-retour {
+      display: inline-block;
+      margin-bottom: 30px;
+      padding: 12px 24px;
+      background: rgba(59, 130, 246, 0.2);
+      border: 2px solid #60a5fa;
+      color: #60a5fa;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: all 0.3s;
+    }
+    .btn-retour:hover {
+      background: rgba(59, 130, 246, 0.4);
+      transform: translateX(-5px);
+    }
+
+    /* Grille projets */
+    .projets-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 40px;
+    }
+    .projet-carte {
+      background: rgba(31, 41, 55, 0.6);
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(59, 130, 246, 0.3);
+      border-radius: 12px;
+      padding: 30px;
+      transition: all 0.4s;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .projet-carte:hover {
+      border-color: #60a5fa;
+      box-shadow: 0 8px 30px rgba(59, 130, 246, 0.4);
+      transform: translateY(-8px);
+    }
+    .projet-carte h3 {
+      font-size: 26px;
+      margin-bottom: 15px;
+      color: #60a5fa;
+    }
+    .projet-carte p {
+      color: #d1d5db;
+      margin: 10px 0;
+      line-height: 1.7;
+    }
+    .projet-carte .tags {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .tag {
+      padding: 6px 14px;
+      background: rgba(59, 130, 246, 0.2);
+      border: 1px solid #60a5fa;
+      border-radius: 20px;
+      font-size: 13px;
+      color: #60a5fa;
+    }
+  </style>
+</head>
+<body>
+  <div class="stars"></div>
+
+  <header>
+    <div class="nav-container">
+      <div class="logo">Bakary Dramé</div>
+      <nav>
+        <a href="index.html">🏠 Accueil</a>
+        <a href="a-propos.html">👤 À propos</a>
+        <a href="projets.html">💼 Projets</a>
+        <a href="veille.html">📡 Veille</a>
+        <a href="competences.html">⚡ Compétences</a>
+        <a href="contact.html">📧 Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <a href="index.html" class="btn-retour">← Retour à l'accueil</a>
+    <h1>Mes <span class="highlight">Projets</span></h1>
+    <p class="subtitle">Vous trouverez ci-dessous les projets que j'ai réalisés.</p>
+
+    <div class="projets-grid">
+      <a href="parking.html" class="projet-carte">
+        <h3>Projet Parking</h3>
+        <p>à venir</p>
+        <div class="tags">
+        </div>
+      </a>
+
+      <a href="personnel.html" class="projet-carte">
+        <h3>Projet Personnel</h3>
+        <p>à venir</p>
+        <div class="tags">
+        </div>
+      </a>
+
+      <a href="oxijeunesvit.html" class="projet-carte">
+        <h3>Projet Site Vitrine</h3>
+        <p>Application web développée en autonomie</p>
+        <div class="tags">
+        </div>
+      </a>
+    </div>
+
+    <div style="text-align: center; margin-bottom: 60px; margin-top: 80px;">
+      <a href="pdf/Tableau_Synthese.pdf" target="_blank" style="
+        display: inline-block;
+        background-color: #3b82f6;
+        color: white;
+        padding: 15px 30px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 16px;
+        box-shadow: 0 4px 6px rgba(59, 130, 246, 0.3);
+        transition: background-color 0.3s ease;
+      ">
+        📊 Télécharger mon Tableau de Synthèse (PDF)
+      </a>
+    </div>
+  </main>
+</body>
+</html>

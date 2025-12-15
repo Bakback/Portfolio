@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Titre de la page - Portfolio Bakary Dramé</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body { 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      background: linear-gradient(to bottom, #0a0e27, #1a1f3a);
+      color: #e5e7eb;
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Effet étoiles */
+    .stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .stars::before {
+      content: '';
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      box-shadow: 
+        100px 200px white, 300px 100px white, 500px 300px white,
+        700px 150px white, 900px 250px white, 1100px 180px white,
+        200px 400px white, 400px 350px white, 600px 450px white,
+        800px 380px white, 1000px 420px white, 1200px 390px white,
+        150px 600px white, 350px 550px white, 550px 650px white,
+        750px 580px white, 950px 620px white, 1150px 590px white;
+      animation: twinkle 3s infinite;
+    }
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
+    }
+
+    /* Header */
+    header { 
+      background-color: rgba(17, 24, 39, 0.8);
+      backdrop-filter: blur(10px);
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+    }
+    .nav-container { 
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo { 
+      font-weight: bold;
+      font-size: 22px;
+      color: #60a5fa;
+    }
+    nav a { 
+      color: #e5e7eb;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 15px;
+      transition: color 0.3s;
+    }
+    nav a:hover { 
+      color: #60a5fa;
+    }
+
+    /* Contenu principal */
+    main { 
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 30px;
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      font-size: 42px;
+      text-align: center;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+    h1 .highlight {
+      color: #60a5fa;
+    }
+
+    .intro {
+      text-align: center;
+      color: #9ca3af;
+      margin-bottom: 50px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Footer */
+    footer {
+      background-color: rgba(17, 24, 39, 0.8);
+      backdrop-filter: blur(10px);
+      padding: 30px;
+      text-align: center;
+      border-top: 1px solid rgba(59, 130, 246, 0.3);
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .social-links {
+      margin-bottom: 20px;
+    }
+
+    .social-links a {
+      color: #60a5fa;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+
+    .social-links a:hover {
+      color: #3b82f6;
+    }
+
+    .copyright {
+      color: #9ca3af;
+      font-size: 14px;
+    }
+
+    /* Bouton retour */
+    .btn-retour {
+      display: inline-block;
+      margin-bottom: 30px;
+      padding: 12px 24px;
+      background: rgba(59, 130, 246, 0.2);
+      border: 2px solid #60a5fa;
+      color: #60a5fa;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: all 0.3s;
+    }
+    .btn-retour:hover {
+      background: rgba(59, 130, 246, 0.4);
+      transform: translateX(-5px);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 32px;
+      }
+      nav a {
+        margin-left: 15px;
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="stars"></div>
+
+  <!-- HEADER (identique sur toutes les pages) -->
+  <header>
+    <div class="nav-container">
+      <div class="logo">Bakary Dramé</div>
+      <nav>
+        <a href="index.html">🏠 Accueil</a>
+        <a href="a-propos.html">👤 À propos</a>
+        <a href="projets.html">💼 Projets</a>
+        <a href="veille.html">📡 Veille</a>
+        <a href="competences.html">⚡ Compétences</a>
+        <a href="contact.html">📧 Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- CONTENU PRINCIPAL (à personnaliser pour chaque page) -->
+  <main>
+    <a href="index.html" class="btn-retour">← Retour à l'accueil</a>
+    
+    <h1>Titre de ta <span class="highlight">page</span></h1>
+    <p class="intro">Description introductive de ta page.</p>
+
+    <!-- ICI, TU AJOUTES LE CONTENU SPÉCIFIQUE DE CHAQUE PAGE -->
+    <div>
+      <p>Contenu de ta page ici...</p>
+    </div>
+
+  </main>
+
+  <!-- FOOTER (identique sur toutes les pages) -->
+  <footer>
+    <div class="footer-content">
+      <div class="social-links">
+        <a href="https://github.com/ton-profil" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/ton-profil" target="_blank">LinkedIn</a>
+        <a href="mailto:ton-email@example.com">Email</a>
+      </div>
+      <div class="copyright">
+        © 2025 Bakary Dramé - BTS SIO SLAM - Tous droits réservés
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

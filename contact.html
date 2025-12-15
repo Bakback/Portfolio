@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - Portfolio Bakary Dramé</title>
+  <!-- Ajout de la police Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body { 
+      /* Police mise à jour */
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      background: linear-gradient(to bottom, #0a0e27, #1a1f3a);
+      color: #e5e7eb;
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Effet étoiles */
+    .stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+    .stars::before {
+      content: '';
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      box-shadow: 
+        100px 200px white, 300px 100px white, 500px 300px white,
+        700px 150px white, 900px 250px white, 1100px 180px white,
+        200px 400px white, 400px 350px white, 600px 450px white,
+        800px 380px white, 1000px 420px white, 1200px 390px white,
+        150px 600px white, 350px 550px white, 550px 650px white,
+        750px 580px white, 950px 620px white, 1150px 590px white;
+      animation: twinkle 3s infinite;
+    }
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
+    }
+
+    /* Header */
+    header { 
+      background-color: rgba(17, 24, 39, 0.8);
+      backdrop-filter: blur(10px);
+      padding: 15px 30px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid rgba(59, 130, 246, 0.3);
+    }
+    .nav-container { 
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo { 
+      font-weight: bold;
+      font-size: 22px;
+      color: #60a5fa;
+    }
+    nav a { 
+      color: #e5e7eb;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 15px;
+      transition: color 0.3s;
+    }
+    nav a:hover { 
+      color: #60a5fa;
+    }
+
+    main { 
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 30px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn-retour {
+      display: inline-block;
+      margin-bottom: 30px;
+      padding: 12px 24px;
+      background: rgba(59, 130, 246, 0.2);
+      border: 2px solid #60a5fa;
+      color: #60a5fa;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: all 0.3s;
+    }
+    .btn-retour:hover {
+      background: rgba(59, 130, 246, 0.4);
+      transform: translateX(-5px);
+    }
+
+    h1 {
+      font-size: 42px;
+      text-align: center;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+    h1 .highlight {
+      color: #60a5fa;
+    }
+    .intro {
+      text-align: center;
+      color: #9ca3af;
+      margin-bottom: 50px;
+      font-size: 18px;
+    }
+
+    /* DIMENSIONS ORIGINALES RESTAURÉES */
+    .contact-card {
+      background: rgba(31, 41, 55, 0.6);
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(59, 130, 246, 0.3);
+      border-radius: 12px;
+      padding: 30px; /* Au lieu de 40px */
+    }
+    .contact-item {
+      margin-bottom: 20px; /* Au lieu de 25px */
+      padding: 15px; /* Au lieu de 20px */
+      background: rgba(17, 24, 39, 0.5);
+      border-radius: 8px;
+      border-left: 4px solid #60a5fa;
+    }
+    .contact-item strong {
+      display: block;
+      margin-bottom: 6px; /* Au lieu de 8px */
+      color: #60a5fa;
+      font-size: 15px; /* Au lieu de 16px */
+    }
+    .contact-item a {
+      color: #93c5fd;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .contact-item a:hover {
+      color: #60a5fa;
+      text-decoration: underline;
+    }
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px; /* Au lieu de 40px */
+    }
+    .social-links a {
+      padding: 10px 20px; /* Au lieu de 12px 24px */
+      background: linear-gradient(135deg, #60a5fa, #3b82f6);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 500;
+      transition: all 0.3s;
+      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+    }
+    .social-links a:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(59, 130, 246, 0.5);
+    }
+  </style>
+</head>
+<body>
+  <div class="stars"></div>
+
+  <header>
+    <div class="nav-container">
+      <div class="logo">Bakary Dramé</div>
+      <nav>
+        <a href="index.html">🏠 Accueil</a>
+        <a href="a-propos.html">👤 À propos</a>
+        <a href="projets.html">💼 Projets</a>
+        <a href="veille.html">📡 Veille</a>
+        <a href="competences.html">⚡ Compétences</a>
+        <a href="contact.html">📧 Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <a href="index.html" class="btn-retour">← Retour à l'accueil</a>
+    <h1>Me <span class="highlight">contacter</span></h1>
+    <p class="intro">N'hésitez pas à me contacter pour toute question, proposition de stage, alternance ou projet de collaboration.</p>
+
+    <div class="contact-card">
+      <div class="contact-item">
+        <strong>📧 Email</strong>
+        <a href="mailto:drame.bakary93@gmail.com">drame.bakary93@gmail.com</a>
+      </div>
+
+      <div class="contact-item">
+        <strong>📱 Téléphone</strong>
+        <a href="tel:+33768025173">07 68 02 51 73</a>
+      </div>
+
+      <div class="contact-item">
+        <strong>📍 Localisation</strong>
+        92400 Courbevoie, Île-de-France
+      </div>
+
+      <div class="contact-item">
+        <strong>💼 LinkedIn</strong>
+        <a href="https://www.linkedin.com/in/dram%C3%A9-bakary-10aa542b4/" target="_blank">linkedin.com</a>
+      </div>
+
+      <div class="contact-item">
+        <strong>💻 GitHub</strong>
+        <a href="https://github.com/Bakback" target="_blank">github.com/Bakback</a>
+      </div>
+
+      <div class="social-links">
+        <a href="mailto:drame.bakary93@gmail.com">M'envoyer un email</a>
+        <a href="https://github.com/Bakback" target="_blank">Voir mon GitHub</a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
