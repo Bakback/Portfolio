@@ -1,7 +1,0 @@
-Changer date ligue
-aller dans ligue.Java  ajouter l'attribut localdate datemachin
-ajouter dans le constructeur et la surchage de constructeur l'attribut
-aller dans addligue (surement dans gestionpersonnel.java) et ajouté l'attribut aussi dans l'appel du constructeur
-ajouté la methode setdatemachin dans ligue.java 
-aller dans ligueconsole et ajouté l'option qui apelle la methode setdatemachin
-la mettre dans le menu 
