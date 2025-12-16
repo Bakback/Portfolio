@@ -13,6 +13,7 @@
       box-sizing: border-box;
     }
 
+
     body { 
       /* Police mise à jour */
       font-family: 'Inter', sans-serif;
@@ -23,6 +24,7 @@
       position: relative;
       overflow-x: hidden;
     }
+
 
     /* Effet étoiles */
     .stars {
@@ -53,6 +55,7 @@
       0%, 100% { opacity: 0.3; }
       50% { opacity: 1; }
     }
+
 
     /* Header */
     header { 
@@ -87,6 +90,7 @@
       color: #60a5fa;
     }
 
+
     main { 
       max-width: 1100px;
       margin: 0 auto;
@@ -94,6 +98,7 @@
       position: relative;
       z-index: 1;
     }
+
 
     .btn-retour {
       display: inline-block;
@@ -111,6 +116,7 @@
       transform: translateX(-5px);
     }
 
+
     h1 {
       font-size: 42px;
       text-align: center;
@@ -120,6 +126,7 @@
     h1 .highlight {
       color: #60a5fa;
     }
+
 
     section {
       margin-bottom: 40px;
@@ -178,6 +185,7 @@
       font-size: 14px;
     }
 
+
     .outils-liste {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -197,6 +205,7 @@
 <body>
   <div class="stars"></div>
 
+
   <header>
     <div class="nav-container">
       <div class="logo">Bakary Dramé</div>
@@ -211,9 +220,11 @@
     </div>
   </header>
 
+
   <main>
-    <a href="index.html" class="btn-retour">← Retour à l'accueil</a>
+    <a href="accueil.html" class="btn-retour">← Retour à l'accueil</a>
     <h1>Ma veille <span class="highlight">technologique</span></h1>
+
 
     <section>
       <h2>Méthodologie & Définitions</h2>
@@ -227,6 +238,7 @@
         </ul>
         <p><strong>Mon choix :</strong> Je réalise ici une <strong>veille technologique</strong> axée sur l'évolution des outils de développement.</p>
       </div>
+
 
       <div class="article-veille" style="background: rgba(17, 24, 39, 0.7);">
         <h3>Méthodes de collecte : Push & Pull</h3>
@@ -254,6 +266,7 @@
         <p style="margin-top: 15px;"><strong>Flux RSS :</strong> fichier dynamique produit automatiquement en fonction des mises à jour d'un site web.</p>
       </div>
 
+
       <div class="article-veille" style="background: rgba(17, 24, 39, 0.7);">
         <h3>De quelle IA parle-t-on ?</h3>
         <p>Dans cette veille, je me concentre spécifiquement sur :</p>
@@ -265,6 +278,7 @@
         </ul>
       </div>
     </section>
+
 
     <section>
       <h2>Sujet de veille</h2>
@@ -278,6 +292,7 @@
         <li>Réfléchir aux compétences à développer pour rester pertinent face à l'IA</li>
       </ul>
     </section>
+
 
     <section>
       <h2>Outils et sources de veille</h2>
@@ -299,8 +314,10 @@
       </div>
     </section>
 
+
     <section>
       <h2>Articles et ressources suivis</h2>
+
 
       <div class="article-veille">
         <h3>L'IA générative menace-t-elle les développeurs juniors ?</h3>
@@ -311,6 +328,7 @@
         <p><strong>Résumé :</strong> Ces articles plongent dans l'impact de l'IA générative sur le métier de développeur web. Ils nous montrent que l'IA peut automatiser beaucoup de tâches répétitives ainsi que générer des codes plus ou moins compliqués mais qu'elle ne peut pas remplacer les compétences humaines essentielles au bon développement d'une entreprise.</p>
         <p><strong>Impact sur mon projet professionnel :</strong> En tant que futur développeur, je dois me concentrer sur des compétences que l'IA ne maîtrise pas encore : architecture logicielle, résolution de problèmes complexes, travail en équipe, et surtout la compréhension des besoins métier. Je dois voir l'IA comme un outil qui me permettra de me démarquer et d'augmenter ma productivité et une bonne expertise si je l'utilise à bon escient.</p>
       </div>
+
 
       <div class="article-veille">
         <h3>L'impact de l'IA sur l'emploi des développeurs</h3> 
@@ -325,8 +343,10 @@
           <li><strong>Nouvelles attentes :</strong> Les entreprises ne chercheront plus seulement quelqu'un qui "sait coder", mais quelqu'un capable d'orchestrer les outils d'IA pour produire vite et bien.</li>
         </ul>
 
+
         <p><strong>Impact sur mon projet :</strong> Ces témoignages confirment qu'il ne faut pas lutter contre l'IA mais l'adopter immédiatement. Je dois apprendre à prompter efficacement (Prompt Engineering) tout en gardant une expertise forte pour vérifier le code généré ("Code Review" de l'IA).</p>
       </div>
+
 
       <div class="article-veille">
         <h3>La sécurité et la qualité du code à l'ère de l'IA</h3>
@@ -338,60 +358,25 @@
           <li><strong>Dette technique :</strong> Le code généré automatiquement peut être verbeux, redondant et difficile à maintenir à long terme si accepté sans révision.</li>
           <li><strong>"Vibe Coding" :</strong> Phénomène où les développeurs valident du code à l'intuition ("ça a l'air de marcher") sans comprendre ce qu'il fait réellement, créant un risque grave en production.</li>
         </ul>
-        <p><strong>Impact sur mon projet professionnel :</strong> Je dois développer une double compétence : utiliser l'IA pour accélérer le développement, mais avoir l'expertise nécessaire pour auditer et corriger le code généré. Cela implique de maîtriser les bonnes pratiques de sécurité et de maintenabilité.</p>
+        <p><strong>Impact sur mon projet professionnel :</strong> Je dois développer une double compétence : utiliser l'IA pour accélérer le développement, mais avoir l'expertise nécessaire pour auditer et corriger le code généré. Cela implique de maîtriser les bonnes pratiques de sécurité (OWASP), les design patterns et les principes SOLID.</p>
       </div>
     </section>
 
+
     <section>
-      <h2>Synthèse personnelle</h2>
-      <p>
-        Ma veille technologique sur l'impact de l'IA générative dans le développement web m'a permis de transformer une crainte initiale en une stratégie professionnelle concrète. Voici mes conclusions pour aborder le marché du travail en 2026.
-      </p>
-
-      <h3>Risques identifiés :</h3>
+      <h2>Synthèse & Conclusion</h2>
+      <p><strong>Ce que j'ai appris :</strong></p>
       <ul>
-        <li>
-          <strong>Dette technique et sécurité :</strong> L'IA génère du code fonctionnel mais souvent vulnérable ou inutilement complexe. Accepter ce code sans audit crée des failles de sécurité et rend la maintenance future coûteuse.
-        </li>
-        <li>
-          <strong>La barrière à l'entrée pour les Juniors :</strong> L'automatisation des tâches simples réduit les opportunités d'apprentissage traditionnelles pour les débutants, rendant l'insertion professionnelle plus exigeante.
-        </li>
-        <li>
-          <strong>Dépendance et "Vibe Coding" :</strong> Le risque majeur est de valider du code à l'intuition sans le comprendre, ce qui conduit à une perte de compétence technique fondamentale.
-        </li>
+        <li>L'IA générative transforme profondément le métier de développeur, mais ne le remplace pas totalement.</li>
+        <li>Les compétences humaines (architecture, résolution de problèmes, communication) restent indispensables.</li>
+        <li>Il faut adopter l'IA comme un outil d'augmentation de productivité, tout en gardant un esprit critique.</li>
+        <li>La sécurité et la qualité du code doivent rester une priorité malgré l'automatisation.</li>
       </ul>
-
-      <h3>Opportunités :</h3>
-      <ul>
-        <li>
-          <strong>Productivité augmentée :</strong> L'IA est capable de produire 80% du volume de code d'un produit, me permettant de consacrer mon temps à l'architecture, à la logique métier complexe et à l'expérience utilisateur.
-        </li>
-        <li>
-          <strong>Nouveaux standards de qualité :</strong> L'utilisation d'outils d'IA exige une rigueur accrue. La valeur d'un développeur se mesure désormais à sa capacité à relire son code, le sécuriser et optimiser ce dernier, généré par la machine.
-        </li>
-        <li>
-          <strong>Hybridation des compétences :</strong> Le marché valorise les profils capables d'orchestrer les outils d'IA tout en garantissant la fiabilité du livrable final.
-        </li>
-      </ul>
-
-      <h3>Ma stratégie face à l'IA</h3>
-      <ul>
-        <li>
-          <strong>Expertise technique :</strong> Je renforce mes bases en algorithmique pour être capable d'auditer le code de l'IA. Je ne peux pas corriger ce que je ne comprends pas.
-        </li>
-        <li>
-          <strong>Utilisation raisonnée :</strong> J'intègre l'IA dans mon flux de travail (tâches répétitives, génération de tests unitaires) mais je m'interdis de l'utiliser pour la logique critique sans une vérification ligne par ligne.
-        </li>
-        <li>
-          <strong>Spécialisation humaine :</strong> Je mise sur les compétences non-automatisables : la compréhension des besoins clients, la communication en équipe, et la conception d'architectures logicielles robustes.
-        </li>
-      </ul>
-
-      <h3 style="margin-top: 30px; border-top: 1px solid rgba(59, 130, 246, 0.2); padding-top: 20px;">Conclusion</h3>
-      <p>
-        L'IA est une révolution inévitable qui ne remplace pas le développeur, mais élève son niveau d'exigence. Plutôt que de subir ce changement, je choisis de devenir un développeur utilisant une amélioration : capable de produire plus vite grâce à l'IA, mais minutieux de la qualité et de la sécurité grâce à mon expertise humaine.
-      </p>
+      
+      <p style="margin-top: 20px;"><strong>Mon positionnement futur :</strong></p>
+      <p>Je vais continuer à me former sur les frameworks modernes (Laravel, React) tout en développant ma maîtrise des outils d'IA générative. Mon objectif est de devenir un développeur capable de produire rapidement du code de qualité en combinant expertise technique et intelligence artificielle.</p>
     </section>
+
 
   </main>
 </body>
