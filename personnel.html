@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projet Personnel - Portfolio Bakary Dramé</title>
-  <!-- Ajout de la police Inter -->
+  <title>Projet Personnel M2L - Portfolio Bakary Dramé</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     * {
@@ -14,7 +13,6 @@
     }
 
     body { 
-      /* Police mise à jour */
       font-family: 'Inter', sans-serif;
       line-height: 1.6;
       background: linear-gradient(to bottom, #0a0e27, #1a1f3a);
@@ -24,7 +22,6 @@
       overflow-x: hidden;
     }
 
-    /* Effet étoiles */
     .stars {
       position: fixed;
       top: 0;
@@ -54,7 +51,6 @@
       50% { opacity: 1; }
     }
 
-    /* Header */
     header { 
       background-color: rgba(17, 24, 39, 0.8);
       backdrop-filter: blur(10px);
@@ -88,11 +84,30 @@
     }
 
     main { 
-      max-width: 1100px;
+      max-width: 1200px;
       margin: 0 auto;
       padding: 60px 30px;
       position: relative;
       z-index: 1;
+    }
+    
+    h1 {
+      font-size: 42px;
+      text-align: center;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+    h1 .highlight {
+      color: #60a5fa;
+    }
+    
+    .intro {
+      text-align: center;
+      color: #9ca3af;
+      margin-bottom: 50px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .btn-retour {
@@ -109,13 +124,6 @@
     .btn-retour:hover {
       background: rgba(59, 130, 246, 0.4);
       transform: translateX(-5px);
-    }
-
-    h1 {
-      font-size: 42px;
-      margin-bottom: 40px;
-      text-align: center;
-      color: #60a5fa;
     }
 
     section {
@@ -146,6 +154,59 @@
     section ul li {
       margin-bottom: 10px;
     }
+
+    .tech-badges {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+    .badge-tech {
+      background: rgba(59, 130, 246, 0.2);
+      border: 1px solid #60a5fa;
+      color: #60a5fa;
+      padding: 5px 12px;
+      border-radius: 15px;
+      font-size: 0.9em;
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-top: 25px;
+    }
+    .feature-card {
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(96, 165, 250, 0.05));
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .feature-card:hover {
+      border-color: #60a5fa;
+      transform: translateY(-5px);
+    }
+    .feature-emoji {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    .feature-card h3 {
+      color: #60a5fa;
+      margin-bottom: 10px;
+    }
+
+    .role-badge {
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+    .role-user { background: #10b981; color: white; }
+    .role-admin { background: #f59e0b; color: white; }
+    .role-root { background: #dc2626; color: white; }
   </style>
 </head>
 <body>
@@ -167,40 +228,166 @@
 
   <main>
     <a href="projets.html" class="btn-retour">← Retour aux projets</a>
-    <h1>Projet Personnel</h1>
-
+    
+    <h1>Projet <span class="highlight">Personnel M2L</span></h1>
+    <p class="intro">Refonte d'une application Java mono-utilisateur en solution multi-utilisateurs avec base de données MySQL, authentification sécurisée et trois niveaux d'habilitation distincts.</p>
+    
     <section>
-      <h2>Contexte</h2>
-      <p>Page en construction. Décris pourquoi tu as lancé ce projet personnel, ce qui t'a motivé.</p>
+      <h2>Contexte du projet</h2>
+      <p>Ce projet a été réalisé dans le cadre de mon BTS SIO. La Maison des Ligues de Lorraine (M2L) utilise une application pour gérer les employés des ligues sportives. L'objectif était de transformer une application Java en ligne de commande mono-utilisateur (utilisant la sérialisation fichier) en une solution robuste, multi-utilisateurs, avec base de données centralisée.</p>
+      <p><strong>Technologies :</strong> Java 8, MySQL 8, JDBC, BCrypt, Maven</p>
+      <p><strong>Architecture :</strong> 3-tiers (Présentation → Métier → Données)</p>
+      <p><strong>Repo GitHub :</strong> <a href="https://github.com/ImOriane" target="_blank" style="color: #60a5fa;">github.com/ImOriane</a></p>
     </section>
 
     <section>
-      <h2>Objectifs</h2>
-      <p>Page en construction. Quel était le but du projet ? Apprendre une nouvelle techno, créer un outil utile, etc.</p>
+      <h2>🎭 Les 3 niveaux d'habilitation</h2>
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin: 20px 0;">
+        <div style="background: rgba(16, 185, 129, 0.2); padding: 20px; border-radius: 12px; text-align: center; flex: 1; min-width: 200px;">
+          <div class="role-badge role-user">Employé Simple</div>
+          <ul style="margin-top: 15px; text-align: left;">
+            <li>✓ Consulter l'annuaire des employés</li>
+            <li>✓ Voir les ligues existantes</li>
+            <li>✗ Aucun droit d'écriture</li>
+          </ul>
+        </div>
+        <div style="background: rgba(245, 158, 11, 0.2); padding: 20px; border-radius: 12px; text-align: center; flex: 1; min-width: 200px;">
+          <div class="role-badge role-admin">Administrateur de Ligue</div>
+          <ul style="margin-top: 15px; text-align: left;">
+            <li>✓ Tous les droits employé</li>
+            <li>✓ Gérer les employés de sa ligue</li>
+            <li>✓ Ajouter/modifier/supprimer</li>
+            <li>✗ Limité à sa ligue uniquement</li>
+          </ul>
+        </div>
+        <div style="background: rgba(220, 38, 38, 0.2); padding: 20px; border-radius: 12px; text-align: center; flex: 1; min-width: 200px;">
+          <div class="role-badge role-root">Super-Administrateur</div>
+          <ul style="margin-top: 15px; text-align: left;">
+            <li>✓ Accès à tous les employés</li>
+            <li>✓ Gérer les administrateurs</li>
+            <li>✓ Créer/supprimer des ligues</li>
+            <li>✓ Compte root unique</li>
+          </ul>
+        </div>
+      </div>
     </section>
 
     <section>
-      <h2>Fonctionnalités</h2>
+      <h2>🏗️ Architecture 3-tiers</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-emoji">💻</div>
+          <h3>Couche Présentation (CLI)</h3>
+          <p>Interface en ligne de commande gérée par CommandLineMenus. Les menus s'adaptent dynamiquement selon le rôle de l'utilisateur connecté.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-emoji">⚙️</div>
+          <h3>Couche Métier</h3>
+          <p>Classes GestionPersonnel, Ligue et Employe encapsulant les règles métier : gestion des rôles, contrôle des droits, validation des données.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-emoji">🗄️</div>
+          <h3>Couche Données (JDBC)</h3>
+          <p>Classe JDBC implémentant l'interface Passerelle. Requêtes préparées (PreparedStatement) pour éviter les injections SQL.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>📊 Base de données</h2>
+      <h3 style="color: #60a5fa; margin: 15px 0 10px;">Schéma relationnel</h3>
+      <pre style="background: rgba(0,0,0,0.4); padding: 15px; border-radius: 8px; overflow-x: auto; font-size: 12px;">
+ligue TABLE
+├── id_ligue INT AUTO_INCREMENT PRIMARY KEY
+└── nom VARCHAR(100)
+
+personnels TABLE
+├── id_personnel_ INT AUTO_INCREMENT PRIMARY KEY
+├── nom_perso VARCHAR(100)
+├── prenom_perso VARCHAR(100)
+├── mail_perso VARCHAR(150) UNIQUE
+├── role_perso ENUM('root','admin','utilisateur')
+├── password_perso VARCHAR(255)  -- BCrypt hash
+├── date_arrivée DATE
+├── date_depart_ DATE NULL
+└── id_ligue INT FOREIGN KEY → ligue(id_ligue)
+      </pre>
+      <p style="margin-top: 15px;"><strong>Contraintes :</strong> Clés étrangères, intégrité référentielle, unicité des emails, valeurs ENUM pour les rôles.</p>
+    </section>
+
+    <section>
+      <h2>🔒 Sécurité & Authentification</h2>
       <ul>
-        <li>Fonctionnalité 1 (à compléter)</li>
-        <li>Fonctionnalité 2 (à compléter)</li>
-        <li>Fonctionnalité 3 (à compléter)</li>
+        <li><strong>Hashage BCrypt :</strong> Mots de passe stockés avec jbcrypt 0.4, vérification par BCrypt.checkpw()</li>
+        <li><strong>Contrôle d'accès :</strong> Vérification des droits dans chaque action, gestion de l'exception DroitsInsuffisants</li>
+        <li><strong>Prévention injections SQL :</strong> Utilisation systématique de PreparedStatement</li>
+        <li><strong>Session utilisateur :</strong> Stockage du rôle et de l'identifiant en mémoire pendant la session</li>
       </ul>
     </section>
 
     <section>
-      <h2>Technologies utilisées</h2>
-      <p>Page en construction. Langages, frameworks, bases de données, outils utilisés.</p>
+      <h2>🛠️ Technologies utilisées</h2>
+      <div class="tech-badges">
+        <span class="badge-tech">Java 8</span>
+        <span class="badge-tech">MySQL 8</span>
+        <span class="badge-tech">JDBC</span>
+        <span class="badge-tech">BCrypt</span>
+        <span class="badge-tech">Maven</span>
+        <span class="badge-tech">CommandLineMenus</span>
+        <span class="badge-tech">Git</span>
+      </div>
     </section>
 
     <section>
-      <h2>Mon rôle et réalisations</h2>
-      <p>Page en construction. Défis rencontrés, solutions trouvées, apprentissages.</p>
+      <h2>📚 Ce que j'ai appris</h2>
+      <ul>
+        <li><strong>Programmation Orientée Objet :</strong> Travail sur un code existant, compréhension du patron Singleton et du pattern Passerelle</li>
+        <li><strong>Conception de bases de données :</strong> Modélisation MCD → MLD → SQL, contraintes d'intégrité, relations entre tables</li>
+        <li><strong>JDBC & requêtes SQL :</strong> Connexion, PreparedStatement, ResultSet, gestion des exceptions SQL</li>
+        <li><strong>Sécurité applicative :</strong> Hashage BCrypt, contrôle d'accès par rôles, prévention des injections SQL</li>
+        <li><strong>Architecture logicielle :</strong> Compréhension et respect d'une architecture 3-tiers en environnement de production</li>
+        <li><strong>Travail sur code existant :</strong> Lecture, compréhension et extension d'un projet Java fourni, sans en briser l'architecture</li>
+      </ul>
     </section>
 
-    <section>
-      <h2>Captures d'écran / Lien GitHub</h2>
-      <p>Page en construction. Ajoute des captures et un lien vers le repo si disponible.</p>
+    <section style="text-align: center; background: none; border: none; margin-top: 60px;">
+      <h2 style="border: none; margin-bottom: 30px;">📄 Documentation du projet</h2>
+      <p style="margin-bottom: 30px;">Vous pouvez consulter ou télécharger la documentation technique complète détaillant la conception et la réalisation de ce projet.</p>
+      
+      <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+        <a href="https://github.com/ImOriane" target="_blank" style="
+          display: inline-block;
+          background: linear-gradient(135deg, #3b82f6, #2563eb);
+          color: white;
+          padding: 15px 35px;
+          border-radius: 8px;
+          text-decoration: none;
+          font-weight: bold;
+          font-size: 16px;
+          box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+          transition: all 0.3s ease;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+        " onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 20px rgba(59, 130, 246, 0.6)'" 
+           onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(59, 130, 246, 0.4)'">
+          🐙 Voir le code sur GitHub
+        </a>
+        <a href="pdf/Documentation_Personel.pdf" target="_blank" style="
+          display: inline-block;
+          background: linear-gradient(135deg, #3b82f6, #2563eb);
+          color: white;
+          padding: 15px 35px;
+          border-radius: 8px;
+          text-decoration: none;
+          font-weight: bold;
+          font-size: 16px;
+          box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+          transition: all 0.3s ease;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+        " onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 20px rgba(59, 130, 246, 0.6)'" 
+           onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(59, 130, 246, 0.4)'">
+          📄 Télécharger la Documentation (PDF)
+        </a>
+      </div>
     </section>
   </main>
 </body>

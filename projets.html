@@ -13,9 +13,7 @@
       box-sizing: border-box;
     }
 
-
     body { 
-      /* Police mise à jour */
       font-family: 'Inter', sans-serif;
       line-height: 1.6;
       background: linear-gradient(to bottom, #0a0e27, #1a1f3a);
@@ -24,7 +22,6 @@
       position: relative;
       overflow-x: hidden;
     }
-
 
     /* Effet étoiles */
     .stars {
@@ -55,7 +52,6 @@
       0%, 100% { opacity: 0.3; }
       50% { opacity: 1; }
     }
-
 
     /* Header */
     header { 
@@ -90,7 +86,6 @@
       color: #60a5fa;
     }
 
-
     main { 
       max-width: 1200px;
       margin: 0 auto;
@@ -98,7 +93,6 @@
       position: relative;
       z-index: 1;
     }
-
 
     h1 {
       font-size: 42px;
@@ -116,7 +110,6 @@
       font-size: 16px;
     }
 
-
     .btn-retour {
       display: inline-block;
       margin-bottom: 30px;
@@ -133,13 +126,13 @@
       transform: translateX(-5px);
     }
 
-
-    /* Grille projets */
+    /* Grille projets - 3 colonnes fixes */
     .projets-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 40px;
     }
+
     .projet-carte {
       background: rgba(31, 41, 55, 0.6);
       backdrop-filter: blur(10px);
@@ -181,11 +174,24 @@
       font-size: 13px;
       color: #60a5fa;
     }
+
+    /* Responsive : 2 colonnes sur tablette */
+    @media (max-width: 900px) {
+      .projets-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* Responsive : 1 colonne sur mobile */
+    @media (max-width: 600px) {
+      .projets-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="stars"></div>
-
 
   <header>
     <div class="nav-container">
@@ -201,38 +207,50 @@
     </div>
   </header>
 
-
   <main>
     <a href="accueil.html" class="btn-retour">← Retour à l'accueil</a>
     <h1>Mes <span class="highlight">Projets</span></h1>
     <p class="subtitle">Vous trouverez ci-dessous les projets que j'ai réalisés.</p>
 
-
     <div class="projets-grid">
       <a href="parking.html" class="projet-carte">
-        <h3>Projet Parking</h3>
-        <p>à venir</p>
-        <div class="tags">
-        </div>
+        <h3>Parking</h3>
+        <p>Application web de parking</p>
+        <div class="tags"></div>
       </a>
 
+     <a href="personnel.html" class="projet-carte">
+    <h3>Personnel M2L</h3>
+    <p>Refonte Java - Gestion multi-utilisateurs</p>
+    <div class="tags">
+    </div>
+</a>
 
-      <a href="personnel.html" class="projet-carte">
-        <h3>Projet Personnel</h3>
-        <p>à venir</p>
-        <div class="tags">
-        </div>
+      <a href="oxyjeunesvit.html" class="projet-carte">
+        <h3>Site Vitrine</h3>
+        <p>Application web</p>
+        <div class="tags"></div>
       </a>
 
+      <a href="location_vehicule.html" class="projet-carte">
+        <h3>Location de Véhicule</h3>
+        <p>Application de location de véhicule</p>
+        <div class="tags"></div>
+      </a>
 
-      <a href="oxijeunesvit.html" class="projet-carte">
-        <h3>Projet Site Vitrine</h3>
-        <p>Application web développée en autonomie</p>
+      <a href="regards_croises.html" class="projet-carte">
+        <h3>Regards Croisés</h3>
+        <p>Application web</p>
+        <div class="tags"></div>
+      </a>
+
+      <a href="healthy_drivers.html" class="projet-carte">
+        <h3>Healthy Drivers</h3>
+        <p>Application de gestion de parking</p>
         <div class="tags">
         </div>
       </a>
     </div>
-
 
     <div style="text-align: center; margin-bottom: 60px; margin-top: 80px;">
       <a href="pdf/Tableau_Synthese.pdf" target="_blank" style="
@@ -250,6 +268,46 @@
         📊 Télécharger mon Tableau de Synthèse (PDF)
       </a>
     </div>
+
+    <section style="text-align: center; background: none; border: none; margin-top: 60px;">
+  <h2 style="border: none; margin-bottom: 30px;">📊 Tableaux de synthèse</h2>
+  <p style="margin-bottom: 30px;">Tableaux de synthèse des compétences acquises dans le cadre de l'épreuve E4 du BTS SIO.</p>
+  
+  <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+    <a href="pdf/Tableau_de_synthese_complet.xlsx - Tableau de synthèse Épreuve E4.pdf" target="_blank" style="
+      display: inline-block;
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: white;
+      padding: 15px 35px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    " onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 20px rgba(16, 185, 129, 0.6)'" 
+       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(16, 185, 129, 0.4)'">
+      📊 Tableau de réalisations professionnelles E4
+    </a>
+    <a href="pdf/Tableau_de_synthese_complet.xlsx - Tableau de synthèse Épreuve E4-1.pdf" target="_blank" style="
+      display: inline-block;
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: white;
+      padding: 15px 35px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    " onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 20px rgba(16, 185, 129, 0.6)'" 
+       onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(16, 185, 129, 0.4)'">
+      📊 Tableau de réalisations professionnelles E4-1
+    </a>
+  </div>
+</section>
   </main>
 </body>
 </html>
